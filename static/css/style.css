@@ -1,0 +1,34 @@
+body{
+margin: 0;
+padding: 0;
+}
+
+#drawingCanvas {
+    border: 1px solid black;
+    
+}
+/* 
+.bg-div{    
+    background-color: #5B4B49;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer{
+    background-color: #5688C7;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+    display: flex;
+}
+
+.leftPanel{
+    width: 30%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+} */

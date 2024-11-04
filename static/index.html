@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/Skribblicon.png" type="image/png">
+    <title>skrriiibbll</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'main-container' : '#5B4B49',
+                        'main-div': '#5688C7',
+                        'chat-bg': '#DCD6D6',
+                        'div-chat' : '#FFFFFF',
+                        'bg-div-player' : '#5B4B49',
+                        'bg-player-card' : '#AEB6A5',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-main-div">
+    <div class="w-screen h-screen flex flex-col items-center overflow-hidden">
+        <!-- timer -->
+        <div class="bg-div-chat w-11/12 h-[10rem] flex justify-between items-center mt-[4rem] shadow-sm rounded-lg">
+            <div class="bg-div-chat w-1/12 h-full flex items-center justify-center ml-[1rem]">
+                <div class="relative">
+                    <img src="./assets/clock.png"></img>
+                    <p class="absolute inset-0 flex items-center justify-center text-2xl pt-2 font-bold">199</p>
+                </div>
+            </div>
+            <!-- mot a guess -->
+            <div class="h-full w-6/12 flex items-center justify-center">
+                    <p class="text-4xl">M a i _ _ e  K _ b _ _ i e r</p>
+            </div>
+            <!-- options -->
+            <div class="h-full w-2/12 flex justify-end items-center space-x-4 pr-5">
+                <button><img class="h-[2.5rem] w-[2.5rem]" src="./assets/copy.png"/></button>
+                <button><img class="h-[2.5rem] w-[2.5rem]" src="./assets/engine.png" /></button>
+            </div>
+        </div>
+        <div class="w-11/12 flex justify-between mt-[1rem]">
+            <!-- div playerlist -->
+            <div class="w-[20rem] h-[40rem] space-y-4 overflow-scroll">
+                <!-- cards player -->
+                <div class="bg-div-chat w-full h-[6rem] rounded-lg">
+                    <!-- contenu score, avatar, name -->
+                </div>
+                <div class="bg-div-chat w-full h-[6rem] rounded-lg">
+                    <!-- contenu score, avatar, name -->                    
+                </div>
+                <div class="bg-div-chat w-full h-[6rem] rounded-lg">
+                    <!-- contenu score, avatar, name -->                    
+                </div>
+                <div class="bg-div-chat w-full h-[6rem] rounded-lg">
+                    <!-- contenu score, avatar, name -->                    
+                </div>
+                <div class="bg-div-chat w-full h-[6rem] rounded-lg">
+                    <!-- contenu score, avatar, name -->                    
+                </div>
+                <div class="bg-div-chat w-full h-[6rem] rounded-lg">
+                    <!-- contenu score, avatar, name -->                    
+                </div>
+                <div class="bg-div-chat w-full h-[6rem] rounded-lg">
+                    <!-- contenu score, avatar, name -->                    
+                </div>
+                <div class="bg-div-chat w-full h-[6rem] rounded-lg">
+                    <!-- contenu score, avatar, name -->                    
+                </div>
+
+            </div>
+            <!-- Div canva -->
+            <div class="bg-div-chat w-[45rem] h-[40rem]"></div>
+            
+            <!-- Div chat -->
+            <div class="bg-gray-500 w-[20rem] h-[40rem] shadow-md rounded-lg flex flex-col">
+                <div class="flex-1 overflow-auto p-4">
+                    <!-- Zone des messages -->
+                </div>
+                
+                <!-- Zone d'envoi de message -->
+                <div class="bg-gray-600 p-2 rounded-b-lg">
+                    <div class="flex items-center h-full">
+                        <input type="text" placeholder="Propose un mot..." class="flex-1 bg-gray-700 text-white rounded-l-2xl py-3 px-4 focus:outline-none" />
+                        <button class="bg-blue-500 text-white rounded-r-2xl px-2 py-3 hover:bg-blue-600">
+                            <img class="w-6 h-6" src="./assets/send.png">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Div pour les cartes des joueurs en bas -->
+        <div class="bg-player-cards w-[70rem] h-[10rem] mt-[1rem]">
+            <!-- contenu player -->
+        </div>
+    </div>
+
+    <!-- Section pour entrer le pseudo -->
+    <!-- <div id="usernameContainer">
+        <input type="text" id="username" placeholder="Nom d'utilisateur">
+        <button onclick="submitUsername()">Valider</button>
+    </div> -->
+
+    <!-- Section du chat, invisible tant que l'utilisateur n'a pas entré son pseudo -->
+    <!-- <div id="chatContainer" style="display:none;">
+    <div id="usernameContainer">
+        <input type="text" id="username" placeholder="Nom d'utilisateur">
+        <button onclick="submitUsername()">Valider</button>
+    </div>
+    <div id="roomContainer">
+        <h3>Choisissez ou créez une Room</h3>
+        <label for="roomId">Nom de la Room :</label>
+        <input type="text" id="roomId" placeholder="Nom de la Room">
+
+    <label for="roomType">Type de Room :</label>
+    <select id="roomType">
+        <option value="public">Publique</option>
+        <option value="private">Privée</option>
+    </select>
+
+    <button onclick="submitRoom()">Créer ou rejoindre une Room</button>
+</div>
+
+
+    <div id="chatContainer" style="display:none;">
+        <h3>Utilisateurs actifs :</h3>
+            <div id="userList"></div>
+
+        <input type="text" id="message" placeholder="Entrez votre message">
+        <button onclick="sendMessage()">Envoyer</button>
+
+
+        <h3>Chat :</h3>
+        <div id="responseContainer"></div>
+
+        <h3>Options de dessin :</h3>
+        <label for="color">Couleur :</label>
+        <input type="color" id="color" value="#000000"> 
+        <label for="thickness">Épaisseur :</label>
+        <input type="range" id="thickness" min="1" max="10" value="2"> 
+
+        <h3>Dessin :</h3>
+        <canvas id="drawingCanvas" width="500" height="500"></canvas>
+    </div>
+    <script src="script.js"></script> -->
+            
+
+    <script src="/js/script.js"></script> 
+</body>
+</html>
